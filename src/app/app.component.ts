@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <app-header></app-header>
 
-    <section class="hero is-fullheight is-primary is-bold">
+    <section class="hero is-fullheight is-success is-bold">
       <div class="hero-body">
         <div class="container">
           <router-outlet></router-outlet>

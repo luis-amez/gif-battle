@@ -8,7 +8,6 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
   imports: [
     CommonModule
   ],
-  declarations: [BattleComponent, CreateComponent, LeaderboardComponent],
-  exports: [BattleComponent, CreateComponent, LeaderboardComponent]
+  declarations: [BattleComponent, CreateComponent, LeaderboardComponent]
 })
 export class PagesModule { }
