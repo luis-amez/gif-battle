@@ -13,7 +13,7 @@ export class GifService {
 
   // Get a random gif
   getRandom() {
-
+    return this.http.get(`${this.apiUrl}/random`);
   }
 
   // Save a gif with caption
