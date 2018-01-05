@@ -55,15 +55,31 @@ import { GifService } from '@app/core/services/gif.service';
 })
 export class CreateComponent implements OnInit {
   randomGif;
-  caption = "";
+  caption = '';
 
   constructor(private gifService: GifService) { }
 
   ngOnInit() {
+    this.getRandomGif();
+  }
+
+  getRandomGif() {
     this.gifService.getRandom()
       .subscribe(gif => {
         this.randomGif = gif;
       })
+  }
+
+  saveGif() {
+    this.gifService.save(this.randomGif.id, this.randomGif.url, this.caption)
+      .subscribe(data => {
+        // Get new random gif
+        this.getRandomGif();
+        // Clear the caption
+        this.caption = '';
+        // Show notification
+
+      });
   }
 
 }
