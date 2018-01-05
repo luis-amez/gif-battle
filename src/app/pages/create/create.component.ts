@@ -22,6 +22,30 @@ import { GifService } from '@app/core/services/gif.service';
   `,
   styles: [
     `
+      .gif-container {
+        position: relative;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 3px;
+      }
+
+      .caption {
+        display: block;
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 30px;
+        text-align: center;
+        color: #FFF;
+        font-size: 30px;
+        text-transform: uppercase;
+        line-height: 1;
+        word-break: break-all;
+        text-shadow: 1px 1px 3px #000;
+      }
+
       .button {
         display: block;
         width: 100%;
