@@ -4,5 +4,6 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://wt-1f17ec71a58ed1f1045e5dbfcf64d14a-0.run.webtask.io/gif-battle-api'
 };
