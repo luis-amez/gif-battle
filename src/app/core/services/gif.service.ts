@@ -25,8 +25,8 @@ export class GifService {
   // ----- BATTLE -----
 
   // Get two gifs to battle
-  getBattle() {
-
+  getBattle(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/versus`);
   }
 
   // Vote for a gif
