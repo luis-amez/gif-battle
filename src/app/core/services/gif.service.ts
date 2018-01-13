@@ -30,8 +30,8 @@ export class GifService {
   }
 
   // Vote for a gif
-  vote(id) {
-
+  vote(id: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/vote`, { id });
   }
 
   // ----- LEADERBOARD -----
