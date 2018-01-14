@@ -36,8 +36,8 @@ export class GifService {
   }
 
   // ----- LEADERBOARD -----
-  getLeaderboard() {
-
+  getLeaderboard(): Observable<Gif[]> {
+    return this.http.get<Gif[]>(`${this.apiUrl}/leaderboard`);
   }
 
 }
