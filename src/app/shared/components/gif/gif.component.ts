@@ -16,12 +16,6 @@ import { Component, OnInit, Input } from '@angular/core';
         position: relative;
       }
 
-      img {
-        width: 100%;
-        height: 300px;
-        border-radius: 3px;
-      }
-
       .caption {
         display: block;
         position: absolute;

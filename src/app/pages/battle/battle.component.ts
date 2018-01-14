@@ -22,6 +22,12 @@ import { GifService } from '@app/core/services/gif.service';
   `,
   styles: [
     `
+      ::ng-deep img {
+        width: 100%;
+        height: 300px;
+        border-radius: 3px;
+      }
+
       .button {
         display: block;
         width: 100%;

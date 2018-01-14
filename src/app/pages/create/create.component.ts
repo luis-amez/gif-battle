@@ -27,7 +27,12 @@ import { GifService } from '@app/core/services/gif.service';
         max-width: 50%;
         margin: 0 auto;
       }
-      
+
+      ::ng-deep img {
+        width: 100%;
+        border-radius: 3px;
+      }
+
       .button {
         display: block;
         width: 100%;
