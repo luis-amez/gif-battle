@@ -12,6 +12,10 @@ import { GifService } from '@app/core/services/gif.service';
           <img [src]="gif.url">
           <div class="caption">{{ gif.caption }}</div>
         </div>
+
+        <a class="button is-info" (click)="voteOnGif(gif.id)">
+          Vote!
+        </a>
       </div>
     </div>
   `,
@@ -41,6 +45,11 @@ import { GifService } from '@app/core/services/gif.service';
         height: 300px;
         border-radius: 3px;
       }
+
+      .button {
+        display: block;
+        width: 100%;
+      }
     `
   ]
 })
@@ -50,14 +59,20 @@ export class BattleComponent implements OnInit {
   constructor(private gifService: GifService) { }
 
   ngOnInit() {
-    this.getBattleGifs();
+    this.getNewBattle();
   }
 
-  getBattleGifs() {
+  getNewBattle() {
     this.gifService.getBattle()
       .subscribe(gifs => {
         this.battleGifs = gifs;
       })
   }
 
+  voteOnGif(id) {
+    this.gifService.vote(id)
+      .subscribe(data => {
+        this.getNewBattle();
+      });
+  }
 }
