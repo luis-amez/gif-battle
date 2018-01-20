@@ -7,21 +7,27 @@ import { Gif } from '@app/models/gif.model';
   template: `
     <h1 class="title has-text-centered">Leaderboard</h1>
 
-    <table class="table is-bordered is-hover is-striped" *ngIf="leaderboardGifs">
-      <tbody>
-        <tr *ngFor="let gif of leaderboardGifs; let i = index">
-          <td>{{ i + 1 }}</td>
-          <td>
-            <app-gif
-              [url]="gif.url"
-              [caption]="gif.caption"
-            >
-            </app-gif>
-          </td>
-          <td>{{ gif.votes }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <section class="section">
+      <div class="columns is-centered">
+        <div class="column is-narrow">
+          <table class="table is-bordered is-hover is-striped" *ngIf="leaderboardGifs">
+            <tbody>
+              <tr *ngFor="let gif of leaderboardGifs; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>
+                  <app-gif
+                    [url]="gif.url"
+                    [caption]="gif.caption"
+                  >
+                  </app-gif>
+                </td>
+                <td>{{ gif.votes }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
   `,
   styles: []
 })
