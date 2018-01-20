@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GifService } from '@app/core/services/gif.service';
 import { Gif } from '@app/models/gif.model';
+import { FlashMessagesService } from 'angular2-flash-messages/module/flash-messages.service';
 
 @Component({
   selector: 'app-create',
@@ -45,7 +46,10 @@ export class CreateComponent implements OnInit {
   randomGif: Gif;
   caption = '';
 
-  constructor(private gifService: GifService) { }
+  constructor(
+    private gifService: GifService,
+    private flashService: FlashMessagesService
+  ) { }
 
   ngOnInit() {
     this.getRandomGif();
@@ -66,7 +70,10 @@ export class CreateComponent implements OnInit {
         // Clear the caption
         this.caption = '';
         // Show notification
-
+        this.flashService.show('Gif created!', { 
+          cssClass: 'notification is-warning', 
+          timeout: 1500 
+        });
       });
   }
 

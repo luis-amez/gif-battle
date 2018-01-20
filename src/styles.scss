@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.flash-message {
+  position: fixed;
+  width: 300px;
+  margin: 0 auto;
+  top: 120px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
